@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Test</title>
+    <script src="libs/moment.min.js"></script>
 </head>
 <body>
-
+    <h1>Haku ist heute:</h1>
+    <div id="ageContent"></div>
+    <script>
+        var contentDiv = document.getElementById("ageContent");
+        var hakuBirthday = moment("2022-03-19");
+        var today = moment();
+        var diff = moment.duration(today.diff(hakuBirthday));
+        contentDiv.innerText = `${diff.years()} Jahre, ${diff.months()} Monate, ${diff.weeks()} Wochen und ${diff.days() % 7} Tage alt!`;
+    </script>
 </body>
 </html>
